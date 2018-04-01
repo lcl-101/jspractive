@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <script>
+      var cat = {};
+      Object.defineProperty(cat,'name',{
+        configurable: true,
+        enumerable:true,
+        value: 'miao'
+      });
+
+      Object.defineProperty(cat,'year',{
+        configurable:false,
+        value:2
+      })
+
+      // delete cat.name;
+      // console.log(cat.name);
+      //
+      // delete cat.year;
+      // console.log(cat.year);
+
+      Object.defineProperty(cat,'name',{
+        configurable: true,
+        value: 'miao1'
+      });
+
+      // Object.defineProperty(cat,'year',{
+      //   configurable:false,
+      //   value:3
+      // })
+
+      console.log(cat.name);
+
+      console.log(cat.year);
+
+      Object.defineProperty(cat,'eye',{
+        writable:true,
+        enumerable:true,
+        configurable: true,
+        value: 2
+      });
+
+      console.log(Object.keys(cat));
+
+      var o = {foo:'bar'};
+
+      console.log(Object.getOwnPropertyNames(o,'foo'));
+    </script>
+</body>
+</html>
