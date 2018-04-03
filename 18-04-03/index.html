@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var CheckObject = function(){
+      return {
+        checkName: function(){
+          console.log(1)
+        },
+        checkEmail: function(){
+          console.log(2)
+        },
+        checkPassword: function(){console.log(3)}
+      }
+    }
+    var a = CheckObject();
+    a.checkName();
+
+    var Home = function(){
+      this.checkName = function(){console.log(1)};
+      this.checkEmail = function(){console.log(2)};
+      this.checkPassword = function(){console.log(3)};
+    }
+
+    // var b = Home;
+    //  b.checkName is not a function
+    // b.checkName();
+
+    var b = new Home();
+    b.checkName();
+
+
+    
+  </script>
+</body>
+</html>
